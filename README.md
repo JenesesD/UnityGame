@@ -10,3 +10,4 @@
   
   A rough estimation (depending on our free time) for a working demo, is about 6 -7 months.
 ```
+[Project ideas, story, etc.](https://drive.google.com/drive/folders/1C1m4IzQHOp-K11zMBvLPmib8ztA-NWk9)
