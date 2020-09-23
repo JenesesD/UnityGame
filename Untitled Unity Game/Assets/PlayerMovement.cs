@@ -78,10 +78,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void SetAnimatorMovement(Vector2 direction)
     {
-        // SetLayerWeight takes two arguments an id of the layer, the weight of the layer
+        // SetLayerWeight takes two arguments an id of the layer and the weight of the layer
         // Sets priority to the specified layer (Running Layer)
         animator.SetLayerWeight(1, 1);
-        // SetFloat takes two arguments a string name, float value
+        // SetFloat takes two arguments a string name and a float value
         animator.SetFloat("x_dir", direction.x);
         animator.SetFloat("y_dir", direction.y);
     }
