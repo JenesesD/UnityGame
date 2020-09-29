@@ -5,9 +5,12 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed;
+    public float dashRange;
     private Vector2 direction;
     private Animator animator;
     private SpriteRenderer mySpriteRenderer;
+    private enum Facing {UP, DOWN, LEFT, RIGHT};
+    private Facing facingDir = Facing.DOWN;
 
     void Start()
     {
@@ -53,17 +56,20 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetKey(KeyCode.W))
         {
             direction += Vector2.up;
+            facingDir = Facing.UP;
         }
 
         if (Input.GetKey(KeyCode.S))
         {
             direction += Vector2.down;
+            facingDir = Facing.DOWN;
         }
 
         if (Input.GetKey(KeyCode.A))
         {
             // Flips player sprite on the X axis
             mySpriteRenderer.flipX = true;
+            facingDir = Facing.LEFT;
             direction += Vector2.left;
         }
 
@@ -71,8 +77,18 @@ public class PlayerMovement : MonoBehaviour
         {
             // Flips player sprite on the X axis
             mySpriteRenderer.flipX = false;
+            facingDir = Facing.RIGHT;
             direction += Vector2.right;
         }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            PlayerDash();
+        }
+    }
+
+    private void PlayerDash()
+    {
+        
     }
 
 
