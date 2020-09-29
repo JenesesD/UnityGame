@@ -10,6 +10,10 @@ public class TestEnemyProjectile : MonoBehaviour
     {
         if (collision.tag != "Enemy")
         {
+            if (collision.tag == "Player")
+            {
+                PlayerStats.playerStats.CalculateDamageReceived(damage);
+            }
             Destroy(this.gameObject);
         }
     }

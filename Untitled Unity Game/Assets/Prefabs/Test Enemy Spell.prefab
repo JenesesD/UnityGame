@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 7205539821822735809}
   - component: {fileID: 3613914587382077277}
   m_Layer: 0
-  m_Name: Test Enemy Projectile
-  m_TagString: Untagged
+  m_Name: Test Enemy Spell
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

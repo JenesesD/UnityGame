@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyDamage : MonoBehaviour
 {
     public float health;
     public float maxHealth;
+
+    public GameObject healthBar;
+    public Slider healthBarSlider;
 
     void Start()
     {
@@ -15,9 +19,12 @@ public class EnemyDamage : MonoBehaviour
 
     public void CalculateDamageReceived(float damage)
     {
+        healthBar.SetActive(true);
         // Calculates the incoming damage, and checks if the enemy is dead or not
         health -= damage;
         CheckIfEnemyIsDead();
+        healthBarSlider.value = CalculateHealthPercentage();
+
     }
 
     public void CheckIfEnemyIsDead()
@@ -38,5 +45,10 @@ public class EnemyDamage : MonoBehaviour
         {
             health = maxHealth;
         }
+    }
+
+    private float CalculateHealthPercentage()
+    {
+        return (health / maxHealth);
     }
 }
