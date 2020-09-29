@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private Vector2 targetPos;
     public float speed;
     public float dashRange;
     private Vector2 direction;
@@ -88,7 +89,25 @@ public class PlayerMovement : MonoBehaviour
 
     private void PlayerDash()
     {
-        
+        Vector2 currentPos = transform.position;
+        targetPos = Vector2.zero;
+        if (facingDir == Facing.UP)
+        {
+            targetPos.y = 1;
+        }
+        if (facingDir == Facing.DOWN)
+        {
+            targetPos.y = -1;
+        }
+        if (facingDir == Facing.LEFT)
+        {
+            targetPos.x = -1;
+        }
+        if (facingDir == Facing.RIGHT)
+        {
+            targetPos.x = 1;
+        }
+        transform.Translate(targetPos * dashRange);
     }
 
 
